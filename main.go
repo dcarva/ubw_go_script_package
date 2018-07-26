@@ -17,6 +17,7 @@ func main() {
 	cmd.AddCommand(printHelloCmd())
 
 	cmd.AddCommand(mainCmd())
+	cmd.AddCommand(jardimCmd())
 
 	if err := cmd.Execute(); err != nil {
 		os.Exit(1)
