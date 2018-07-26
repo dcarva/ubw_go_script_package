@@ -22,11 +22,11 @@ Caso necessite mudar os ficheiros estão aí presentes, e na linha de comandos d
 
 Os comandos estão realizados de forma a que possamos enviar diferentes informações de cada dispositivo de sensores:
 
-| Comandos        | output           | 
-| ------------- |:-------------:| 
-| ./gateway sensor    | Temperatura | 
-| ./gateway sensor_jardim      | Humidade      |  
-| ./gateway help| ver lista de comandos      | 
+| Comandos        | 
+| ------------- |
+| ./gateway sensor    | 
+| ./gateway sensor_jardim      | 
+| ./gateway help| 
 
 
 ###### UBIWHERE
