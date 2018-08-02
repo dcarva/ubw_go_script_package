@@ -23,7 +23,7 @@ const (
 
 func main() {
 	cmd := &cobra.Command{
-		Use:          "ui",
+		Use:          "gateway",
 		Short:        "Bem-vindo",
 		SilenceUsage: true,
 	}
