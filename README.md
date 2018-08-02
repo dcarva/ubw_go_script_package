@@ -22,8 +22,8 @@ Caso necessite mudar os ficheiros estão aí presentes, e na linha de comandos d
 
 Os comandos estão realizados de forma a que possamos enviar diferentes informações de cada dispositivo de sensores:
 
-| Comandos        | 
-| ------------- |
+| Comandos        | Descrição |
+| ------------- |-------------|
 | ./gateway -h    | ajuda |
 | ./gateway --port=1883 | Mudar a porta do MQTT Broker caso seja diferente      | 
 | ./gateway --add=localhost |Mudar para o IP que está instalado o seu LoRa server instalado | 
