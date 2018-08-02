@@ -24,9 +24,9 @@ Os comandos estão realizados de forma a que possamos enviar diferentes informa�
 
 | Comandos        | 
 | ------------- |
-| ./gateway sensor    | 
-| ./gateway sensor_jardim      | 
-| ./gateway help| 
+| ./gateway -h    | ajuda |
+| ./gateway --port=1883 | Mudar a porta do MQTT Broker caso seja diferente      | 
+| ./gateway --add=localhost |Mudar para o IP que está instalado o seu LoRa server instalado | 
 
 
 ###### UBIWHERE
