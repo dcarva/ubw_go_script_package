@@ -116,33 +116,10 @@ func mainCmd() *cobra.Command {
 		DlFcnt:  0,
 	}
 
-	/*
-		*	Make up some random values.
-		*
-		*	These should be decoded at lora-app-server with a proper function.
-		* 	For this example, the object should look like this:
-			obj : {
-				"temperature": {
-					"value":((bytes[0]*256+bytes[1])/100),"unit":"°C"
-				},
-				"pressure": {
-					"value":((bytes[2]*16*16*16*16+bytes[3]*256+bytes[4])/100),"unit":"hPa"
-				},
-				"humidity": {
-					"value":((bytes[5]*256+bytes[6])/1024),"unit":"%"
-				}
-			}
-		*
-	*/
-	
-			/*rand.Seed(time.Now().UnixNano() / 10000)
-	temp := [2]byte{uint8(rand.Intn(25)), uint8(rand.Intn(100))}
-	pressure := [3]byte{uint8(rand.Intn(2)), uint8(rand.Intn(20)), uint8(rand.Intn(100))}
-	humidity := [2]byte{uint8(rand.Intn(100)), uint8(rand.Intn(100))}
+			for {
+				
+			
 
-	//Create the payload, data rate and rx info.
-	payload := []byte{temp[0], temp[1], pressure[0], pressure[1], pressure[2], humidity[0], humidity[1]}
-		*/
 			
 	s1 := rand.NewSource(time.Now().UnixNano())
     r1 := rand.New(s1)
@@ -215,6 +192,9 @@ func mainCmd() *cobra.Command {
 			
 			
 			
+		time.Sleep(3 * time.Second)
+
+	}
 			
 			
 			
@@ -307,29 +287,9 @@ func jardimCmd() *cobra.Command {
 		DlFcnt:  0,
 	}
 
-	/*
-		*	Make up some random values.
-		*
-		*	These should be decoded at lora-app-server with a proper function.
-		* 	For this example, the object should look like this:
-			obj : {
-				"temperature": {
-					"value":((bytes[0]*256+bytes[1])/100),"unit":"°C"
-				},
-				"pressure": {
-					"value":((bytes[2]*16*16*16*16+bytes[3]*256+bytes[4])/100),"unit":"hPa"
-				},
-				"humidity": {
-					"value":((bytes[5]*256+bytes[6])/1024),"unit":"%"
-				}
-			}
-		*
-	*/
-	/*rand.Seed(time.Now().UnixNano() / 10000)
-	temp := [2]byte{uint8(rand.Intn(25)), uint8(rand.Intn(100))}
-	pressure := [3]byte{uint8(rand.Intn(2)), uint8(rand.Intn(20)), uint8(rand.Intn(100))}
-	humidity := [2]byte{uint8(rand.Intn(100)), uint8(rand.Intn(100))}*/
-
+			for {    // Make a loop of values *-*-*-*-*-*-*-*-*-*-*-*
+			
+	
 		s1 := rand.NewSource(time.Now().UnixNano())
     r1 := rand.New(s1)
 	
@@ -400,6 +360,9 @@ func jardimCmd() *cobra.Command {
         }
 			
 		
+		time.Sleep(3 * time.Second)
+
+	}
 
 	
 			return nil
@@ -409,5 +372,6 @@ func jardimCmd() *cobra.Command {
 	cmd.Flags().String(portFlag, "1883", "How to connect")
 	return cmd
 }
+
 
 
