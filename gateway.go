@@ -15,6 +15,9 @@ import (
         lds "github.com/iegomez/loraserver-device-sim"
 )
 
+
+//import "strconv"
+
 const (
 	ipFlag = "ip"
 	portFlag="port"
@@ -131,14 +134,49 @@ func mainCmd() *cobra.Command {
 			}
 		*
 	*/
-	rand.Seed(time.Now().UnixNano() / 10000)
+	
+			/*rand.Seed(time.Now().UnixNano() / 10000)
 	temp := [2]byte{uint8(rand.Intn(25)), uint8(rand.Intn(100))}
 	pressure := [3]byte{uint8(rand.Intn(2)), uint8(rand.Intn(20)), uint8(rand.Intn(100))}
 	humidity := [2]byte{uint8(rand.Intn(100)), uint8(rand.Intn(100))}
 
 	//Create the payload, data rate and rx info.
 	payload := []byte{temp[0], temp[1], pressure[0], pressure[1], pressure[2], humidity[0], humidity[1]}
+		*/
+			
+	s1 := rand.NewSource(time.Now().UnixNano())
+    r1 := rand.New(s1)
+	
+	s2 := rand.NewSource(time.Now().UnixNano())
+    r2 := rand.New(s2)
+	
+	
+	s3 := rand.NewSource(time.Now().UnixNano())
+    r3 := rand.New(s3)
+	
+	var temperatura int
+	
+	temperatura=r1.Intn(50)	
+	temp_total := [1]byte{uint8(temperatura)}
+	
+	var pressao int
+	
+	pressao=r2.Intn(100)	
+	pressao_total := [1]byte{uint8(pressao)}
+	
+	
+	var humidade int
+	
+	humidade=r3.Intn(100)	
+	humidade_total := [1]byte{uint8(humidade)}
+	
 
+	//Create the payload, data rate and rx info.
+
+	payload := []byte{temp_total[0], pressao_total[0], humidade_total[0]}
+	fmt.Println("temperatura",payload[0])
+	fmt.Println("Pressão",payload[1])
+	fmt.Println("Humidade",payload[2])
 	//Change to your gateway MAC to build RxInfo.
 	gwMac := "b827ebfffeb13d1f"
 
@@ -156,7 +194,7 @@ func mainCmd() *cobra.Command {
                 CodeRate:  "4/5",
                 CrcStatus: 1,
                 DataRate:  dataRate,
-		Frequency: 869000000,
+				Frequency: 869000000,
                 LoRaSNR:   7,
                 Mac:       gwMac,
                 RfChain:   1,
@@ -165,7 +203,10 @@ func mainCmd() *cobra.Command {
                 Time:      time.Now().Format(time.RFC3339),
                 Timestamp: int32(time.Now().UnixNano() / 1000000000),
         }
-
+		
+				
+			
+			
 	    //Now send an uplink
         err = device.Uplink(client, lorawan.UnconfirmedDataUp, 1, rxInfo, payload)
         if err != nil {
@@ -284,14 +325,44 @@ func jardimCmd() *cobra.Command {
 			}
 		*
 	*/
-	rand.Seed(time.Now().UnixNano() / 10000)
+	/*rand.Seed(time.Now().UnixNano() / 10000)
 	temp := [2]byte{uint8(rand.Intn(25)), uint8(rand.Intn(100))}
 	pressure := [3]byte{uint8(rand.Intn(2)), uint8(rand.Intn(20)), uint8(rand.Intn(100))}
-	humidity := [2]byte{uint8(rand.Intn(100)), uint8(rand.Intn(100))}
+	humidity := [2]byte{uint8(rand.Intn(100)), uint8(rand.Intn(100))}*/
+
+		s1 := rand.NewSource(time.Now().UnixNano())
+    r1 := rand.New(s1)
+	
+	s2 := rand.NewSource(time.Now().UnixNano())
+    r2 := rand.New(s2)
+	
+	
+	s3 := rand.NewSource(time.Now().UnixNano())
+    r3 := rand.New(s3)
+	
+	var temperatura int
+	
+	temperatura=r1.Intn(50)	
+	temp_total := [1]byte{uint8(temperatura)}
+	
+	var pressao int
+	
+	pressao=r2.Intn(100)	
+	pressao_total := [1]byte{uint8(pressao)}
+	
+	
+	var humidade int
+	
+	humidade=r3.Intn(100)	
+	humidade_total := [1]byte{uint8(humidade)}
+	
 
 	//Create the payload, data rate and rx info.
-	payload := []byte{temp[0], temp[1], pressure[0], pressure[1], pressure[2], humidity[0], humidity[1]}
 
+	payload := []byte{temp_total[0], pressao_total[0], humidade_total[0]}
+	fmt.Println("temperatura",payload[0])
+	fmt.Println("Pressão",payload[1])
+	fmt.Println("Humidade",payload[2])
 	//Change to your gateway MAC to build RxInfo.
 	gwMac := "b827ebfffeb13d1f"
 
@@ -309,7 +380,7 @@ func jardimCmd() *cobra.Command {
                 CodeRate:  "4/5",
                 CrcStatus: 1,
                 DataRate:  dataRate,
-		Frequency: 869000000,
+				Frequency: 869000000,
                 LoRaSNR:   7,
                 Mac:       gwMac,
                 RfChain:   1,
@@ -318,22 +389,19 @@ func jardimCmd() *cobra.Command {
                 Time:      time.Now().Format(time.RFC3339),
                 Timestamp: int32(time.Now().UnixNano() / 1000000000),
         }
-
+		
+				
+			
+			
 	    //Now send an uplink
         err = device.Uplink(client, lorawan.UnconfirmedDataUp, 1, rxInfo, payload)
         if err != nil {
                 fmt.Printf("couldn't send uplink: %s\n", err)
         }
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+		
+
+	
 			return nil
 		},
 	}
@@ -341,6 +409,5 @@ func jardimCmd() *cobra.Command {
 	cmd.Flags().String(portFlag, "1883", "How to connect")
 	return cmd
 }
-
 
 
