@@ -26,7 +26,7 @@ Os comandos estão realizados de forma a que possamos enviar diferentes informa�
 | ------------- |-------------|
 | ./gateway -h    | ajuda |
 | ./gateway nome_sensor --port=1883 | Mudar a porta do MQTT Broker caso seja diferente      | 
-| ./gateway nome_sensor --add=localhost |Mudar para o IP que está instalado o seu LoRa server instalado | 
+| ./gateway nome_sensor --ip=localhost |Mudar para o IP que está instalado o seu LoRa server instalado | 
 
 
 ###### UBIWHERE
