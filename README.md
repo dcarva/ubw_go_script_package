@@ -29,4 +29,7 @@ Os comandos estão realizados de forma a que possamos enviar diferentes informa�
 | ./gateway nome_sensor --ip=localhost |Mudar para o IP que está instalado o seu LoRa server instalado | 
 
 
+
+#### Se gostar de trabalhar com node-red poderá utilizar o flow que está criado (https://gist.github.com/dcarva/2d320d2a3a649ec238b4a0ccbe510b78) ou (https://flows.nodered.org/flow/2d320d2a3a649ec238b4a0ccbe510b78) deverá instalar algumas livrarias como base64 e dashboard
+
 ###### UBIWHERE
