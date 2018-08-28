@@ -8,10 +8,10 @@
 #### Requisitos
 + Instalação do LoRa Server, LoRa App Server e LoRa Gateway Bridge (https://www.loraserver.io/use/getting-started/)
 + Configuração através da Interface do Utilizador que se encontra através do link `https://localhost:8080`
-+go get github.com/spf13/cobra
-+go get github.com/iegomez/loraserver-device-sim
-+go get github.com/eclipse/paho.mqtt.golang
-+go get github.com/brocaar/lorawan
++ go get github.com/spf13/cobra
++ go get github.com/iegomez/loraserver-device-sim
++ go get github.com/eclipse/paho.mqtt.golang
++ go get github.com/brocaar/lorawan
 
 
 
