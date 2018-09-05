@@ -1,9 +1,8 @@
 # Envio de pacotes para o LoRa server
 
 
-![Image01](https://forum.loraserver.io/uploads/default/optimized/1X/b412bbce85e9dbe872b4458fafcc569dab476712_1_566x500.png "LoRa architecture")
+![Image01](https://github.com/dcarva/ubw_go_script_package/blob/master/architecture.jpg "LoRa architecture")
 
-[Link imagem](https://imgur.com/a/lxuxnf0)
 
 #### Requisitos
 + Instalação do LoRa Server, LoRa App Server e LoRa Gateway Bridge (https://www.loraserver.io/use/getting-started/)
